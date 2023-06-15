@@ -71,6 +71,7 @@ app.use((req, res, next)=> {
 //Routes 
 app.use('/toughts', toughtsRoutes)
 
+//Para a página inicial mostrar todos os pensamentos 
 app.get('/', ThoughtsController.showThoughts)
 
 
