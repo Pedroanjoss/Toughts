@@ -6,6 +6,7 @@ const ThoughtController = require('../controllers/ToughtController')
 const checkAuth = require('../helpers/auth').checkAuth
 
 router.get('/add',checkAuth, ThoughtController.createTought)
+router.post('/add',checkAuth, ThoughtController.createToughtSave)
 router.get('/dashboard',checkAuth, ThoughtController.dashboard)
 router.get('/', ThoughtController.showThoughts)
 

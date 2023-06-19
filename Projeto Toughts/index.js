@@ -60,6 +60,9 @@ app.use(flash())
 // public path
 app.use(express.static('public'))
 
+//get css bug fixed
+app.use(express.static(__dirname +'public'))
+
 // set session to res
 app.use((req, res, next)=> {
     if (req.session.userid) {
