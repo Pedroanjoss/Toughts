@@ -82,4 +82,14 @@ module.exports = class ThoughtsController {
         console.log('Aconteceu um erro: ' + error)
     }
     }
+
+    static async updateTought(req, res){
+
+        const id =  req.params.id
+
+        const tought = await Tought.findOne({where: {id:id}, raw: true})
+
+        res.render('toughts/edit', {tought})
+
+    }
 }

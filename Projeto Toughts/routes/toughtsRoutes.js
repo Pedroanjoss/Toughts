@@ -1,14 +1,15 @@
 const express = require('express')
 const router= express.Router()
-const ThoughtController = require('../controllers/ToughtController')
+const ToughtController = require('../controllers/ToughtController')
 
 //helpers
 const checkAuth = require('../helpers/auth').checkAuth
 
-router.get('/add',checkAuth, ThoughtController.createTought)
-router.post('/add',checkAuth, ThoughtController.createToughtSave)
-router.get('/dashboard',checkAuth, ThoughtController.dashboard)
-router.post('/remove', checkAuth, ThoughtController.removeTought) 
-router.get('/', ThoughtController.showThoughts)
+router.get('/add',checkAuth, ToughtController.createTought)
+router.post('/add',checkAuth, ToughtController.createToughtSave)
+router.get('/edit/:id', checkAuth, ToughtController.updateTought)
+router.get('/dashboard',checkAuth, ToughtController.dashboard)
+router.post('/remove', checkAuth, ToughtController.removeTought) 
+router.get('/', ToughtController.showThoughts)
 
 module.exports = router
